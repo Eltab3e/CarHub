@@ -1,13 +1,15 @@
-import { CarProps } from '@/types';
+import { CarProps, FilterProps } from '@/types';
 
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
+  const { manufacturer, year, model, limit, fuel } = filters;
+
   const headers = {
     'api-host': 'https://api.api-ninjas.com/v1/cars',
     'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY as string,
   };
 
   const response = await fetch(
-    'https://api.api-ninjas.com/v1/cars?model=corolla',
+    `https://api.api-ninjas.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
     {
       headers: headers,
     }
