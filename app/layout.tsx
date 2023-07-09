@@ -1,9 +1,10 @@
 import './globals.css';
+
 import { Footer, Navbar } from '@/components';
 
 export const metadata = {
   title: 'CarHub',
-  description: 'Discover the best cars in the world!',
+  description: "Discover world's best cars showcase application",
 };
 
 export default function RootLayout({

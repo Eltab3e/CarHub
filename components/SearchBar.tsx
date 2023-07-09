@@ -19,16 +19,14 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 );
 
 const SearchBar = () => {
-  const [manufacturer, setManufacturer] = useState('');
+  const [manufacturer, setManuFacturer] = useState('');
   const [model, setModel] = useState('');
 
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    // Prevent page reload on form sumbit
     e.preventDefault();
 
-    // Trim method is used to remove the whitespace from the string
     if (manufacturer.trim() === '' && model.trim() === '') {
       return alert('Please provide some input');
     }
@@ -67,7 +65,7 @@ const SearchBar = () => {
       <div className='searchbar__item'>
         <SearchManufacturer
           manufacturer={manufacturer}
-          setManufacturer={setManufacturer}
+          setManuFacturer={setManuFacturer}
         />
         <SearchButton otherClasses='sm:hidden' />
       </div>
